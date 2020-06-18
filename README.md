@@ -1,6 +1,6 @@
 # HA-Transformer
 
-The implementation of hybrid attentive Transformer (HAT).
+The implementation of multi-branch attentive Transformer (MAT).
 The implementation is based on [fairseq](https://github.com/pytorch/fairseq).
 
 ## Model Training
@@ -41,7 +41,7 @@ The implementation is based on [fairseq](https://github.com/pytorch/fairseq).
         > /path/to/log/file 2>&1
     ```
 
-3. Train HAT + Proximal initialization
+3. Train MAT + Proximal initialization
 
     ```bash
     # To reproduce the 36.22 result in Table 2.
@@ -57,19 +57,19 @@ The implementation is based on [fairseq](https://github.com/pytorch/fairseq).
     N_a=3
     python scripts/init-mbt-ckpt.py \
         /path/to/std/transformer/checkpoint_best.pt \
-        /path/to/proximal-init-hat/checkpoint_last.pt \
+        /path/to/proximal-init-mat/checkpoint_last.pt \
         -N ${N_a} --NF 1 \
         --ro
 
-    # 3. Train HAT
+    # 3. Train MAT
     N_a=3
     d=256
     d_h=2048
     rho=0.3
-    # Run the training command in previous section, change --save-dir to '/path/to/proximal-init-hat'.
+    # Run the training command in previous section, change --save-dir to '/path/to/proximal-init-mat'.
     ```
 
-4. Inference HAT
+4. Inference MAT
 
     ```bash
     python generate.py /path/to/prepared/dataset \
