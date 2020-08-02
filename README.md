@@ -189,7 +189,7 @@ The implementation is based on [fairseq](https://github.com/pytorch/fairseq).
         --seed 1 \
         --ddp-backend no_c10d --distributed-backend nccl --distributed-no-spawn \
         --task translation --arch transformer_mb_vaswani_wmt_en_de_big \
-        --max-update 800000 \
+        --max-update 800000 --max-epoch 70 \
         --share-all-embeddings \
         --optimizer adam --adam-betas '(0.9, 0.98)' \
         --lr 0.0005 --lr-scheduler inverse_sqrt --warmup-updates 4000 --warmup-init-lr 1e-07 --min-lr 1e-09 \
