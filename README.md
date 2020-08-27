@@ -97,7 +97,7 @@ The implementation is based on [fairseq](https://github.com/pytorch/fairseq).
    ```bash
    # NOTE: Remember to add "--joined-dictionary" option.
    TEXT=examples/translation/wmt14_en_de
-   python preprocess.py --source-lang de --target-lang en --trainpref ${TEXT}/train --validpref ${TEXT}/valid --testpref ${TEXT}/test --joined-dictionary --destdir /path/to/prepared/dataset --nwordssrc 32768 --nwordstgt 32768
+   python preprocess.py --source-lang en --target-lang de --trainpref ${TEXT}/train --validpref ${TEXT}/valid --testpref ${TEXT}/test --joined-dictionary --destdir /path/to/prepared/dataset --nwordssrc 32768 --nwordstgt 32768
    ```
 
 2. Train MAT
@@ -167,7 +167,7 @@ The implementation is based on [fairseq](https://github.com/pytorch/fairseq).
         --batch-size 128 \
         --beam 4 --lenpen 0.6 \
         --remove-bpe \
-        --quiet --source-lang de --target-lang en \
+        --quiet --source-lang en --target-lang de \
         > /path/to/infer/log/file 2>&1
     ```
 
@@ -245,6 +245,6 @@ The implementation is based on [fairseq](https://github.com/pytorch/fairseq).
         --batch-size 128 \
         --beam 4 --lenpen 0.6 \
         --remove-bpe \
-        --quiet --source-lang de --target-lang en \
+        --quiet --source-lang en --target-lang de \
         > /path/to/infer/log/file 2>&1
     ```
